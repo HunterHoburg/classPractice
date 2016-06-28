@@ -1,15 +1,26 @@
 {
-  "name": "validations",
-  "version": "1.0.0",
-  "description": "",
-  "main": "validations.js",
+  "name": "t-shirts_and_pants",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "mocha"
+    "start": "nodemon ./bin/www",
+    "test": "mocha ./test/unit"
   },
-  "author": "",
-  "license": "ISC",
+  "dependencies": {
+    "body-parser": "~1.13.2",
+    "cookie-parser": "~1.3.5",
+    "debug": "~2.2.0",
+    "express": "~4.13.1",
+    "jade": "~1.11.0",
+    "mongo": "^0.1.0",
+    "monk": "^2.1.0",
+    "morgan": "~1.6.1",
+    "serve-favicon": "~2.3.0"
+  },
   "devDependencies": {
     "chai": "^3.5.0",
-    "mocha": "^2.5.3"
+    "mocha": "^2.5.3",
+    "protractor": "^3.3.0",
+    "supertest": "^1.2.0"
   }
 }

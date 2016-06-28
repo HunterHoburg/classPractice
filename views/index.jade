@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  form(method="POST" action="/clothes")
+    fieldset
+      legend(id="product-form") New Product Form
+      label(for='productName') Product Name
+      input(type='text' id='productName' name="name" placeholder="Enter a Product Name")
+      label(for='price') Product Price
+      input(type='text' id='price' name="price" placeholder='Enter a value')
+      span
+        for item in categories
+          labe(for=item._id) #{item.type}
+          input(type='radio' id=item._id name="category" value=item.type)
+      input(type='submit' id='productSubmit' value="Submit")
+
+  form(method="POST" action="/categories")
+    fieldset
+      legend(id="category-form") New Category Form
+      label(for='categoryName') Category Name
+      input(type='text' id='categoryName' name="type" placeholder="Enter a Category Name")
+      input(type='submit' id='categorySubmit' value="Submit")
+
+  div
+    ul
+      for item in dataset
+         a(href="/clothes/"+item._id) #{item.name} - $#{item.price} == #{item.category}
+         br
